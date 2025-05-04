@@ -1,16 +1,5 @@
 import sys
 import re
-import subprocess
-import os
-
-def ensure_package(package):
-    try:
-        __import__(package)
-    except ImportError:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
-
-ensure_package('streamlit')
-ensure_package('youtube_transcript_api')
 import streamlit as st
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
 
